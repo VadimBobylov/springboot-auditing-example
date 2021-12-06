@@ -21,21 +21,21 @@ public class Auditable<U> {
     //column's value during the update operation
     @CreatedBy
     @Column(name = "created_by", updatable = false)
-    private U createdBy;
+    protected U createdBy;
 
     //updatable flag helps to avoid the override of
     //column's value during the update operation
     @CreatedDate
     @Column(name = "created_date", updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    private Date creationDate;
+    protected Date creationDate;
 
     @LastModifiedBy
     @Column(name = "last_modified_by")
-    private U lastModifiedBy;
+    protected U lastModifiedBy;
 
     @LastModifiedDate
     @Column(name = "last_modified_date")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date lastModifiedDate;
+    protected Date lastModifiedDate;
 }
